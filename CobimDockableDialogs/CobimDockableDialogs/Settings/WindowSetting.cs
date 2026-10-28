@@ -30,7 +30,7 @@ namespace CobimDockableDialogs.Settings
         /// </summary>
         private CommonLoadingWorkV _CommonLoadingWorkV { get; set; }
 
-        // TODO : Window - 체크인 팝업 화면 프로퍼티 "_CheckInPartV" 필요시 사용 예정 (2024.10.10 jbh)
+        // TODO : Window - 체크인 팝업 화면 프로퍼티 "_CheckInPartV" 필요시 사용 예정 (2024.10.10 minjae)
         /// <summary>
         /// Window - 체크인 팝업 화면 
         /// </summary>
@@ -42,7 +42,7 @@ namespace CobimDockableDialogs.Settings
         /// </summary>
         private bool _IsShownLoadingWork { get; set; }
 
-        // TODO : Window - 체크인 팝업 화면 출력 여부 프로퍼티 "_IsShownCheckIn" 필요시 사용 예정 (2024.10.10 jbh)
+        // TODO : Window - 체크인 팝업 화면 출력 여부 프로퍼티 "_IsShownCheckIn" 필요시 사용 예정 (2024.10.10 minjae)
         /// <summary>
         /// Window - 체크인 팝업 화면 출력 여부 
         /// </summary>
@@ -79,7 +79,7 @@ namespace CobimDockableDialogs.Settings
                 //        이전에 작업한 "파일 다운로드", "체크아웃" 처리 중 대기 화면이 출력되지 않도록
                 //        아래 처럼 Window - 로그인, 체크아웃, 체크인, 다운로드 시
                 //        처리 중 화면 객체 프로퍼티 "_CommonLoadingWorkV"를 싱글톤 패턴을 사용하지 않고 
-                //        해당 객체를 새로 생성하는 로직 "_CommonLoadingWorkV = new CommonLoadingWorkV();" 구현 (2024.10.22 jbh)
+                //        해당 객체를 새로 생성하는 로직 "_CommonLoadingWorkV = new CommonLoadingWorkV();" 구현 (2024.10.22 minjae)
                 // 싱글톤 패턴 참고 URL - https://velog.io/@jhbae0420/%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0%EC%99%80-%EB%AC%B8%EC%A0%9C%EC%A0%90
                 _CommonLoadingWorkV = new CommonLoadingWorkV();
             }
@@ -121,7 +121,7 @@ namespace CobimDockableDialogs.Settings
                 if(false == _IsShownLoadingWork) 
                 {
                     // TODO : 오류 메시지 "System.InvalidOperationException: '많은 UI 구성 요소에서 호출 스레드가 필요하므로 해당 스레드는 STA여야 합니다.'"
-                    //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.02 jbh)
+                    //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.02 minjae)
                     // 참고 URL - https://giveme-happyending.tistory.com/208 
                     // 다른 쓰레드(Window 화면 뷰모델 CommonLoadingWorkVM.cs 소스파일)에서 UI 쓰레드 접근하기
                     // => 윈폼과 마찬가지로 메서드 Dispatcher.Invoke 사용하여 작업
@@ -131,14 +131,14 @@ namespace CobimDockableDialogs.Settings
                         //        이전에 작업한 "파일 다운로드", "체크아웃" 처리 중 대기 화면이 출력되지 않도록
                         //        아래 처럼 Window - 로그인, 체크아웃, 체크인, 다운로드 시
                         //        처리 중 화면 객체 프로퍼티 "_CommonLoadingWorkV"를 싱글톤 패턴을 사용하지 않고 
-                        //        해당 객체를 새로 생성하는 로직 "_CommonLoadingWorkV = new CommonLoadingWorkV();" 구현 (2024.10.22 jbh)
+                        //        해당 객체를 새로 생성하는 로직 "_CommonLoadingWorkV = new CommonLoadingWorkV();" 구현 (2024.10.22 minjae)
                         // 싱글톤 패턴 참고 URL - https://velog.io/@jhbae0420/%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0%EC%99%80-%EB%AC%B8%EC%A0%9C%EC%A0%90
                         _CommonLoadingWorkV = new CommonLoadingWorkV();
                         //_CommonLoadingWorkV.Visibility = Visibility.Visible;
                         var commonLoadingWorkVM = (CommonLoadingWorkVM)_CommonLoadingWorkV.DataContext;
                         commonLoadingWorkVM.SetMessage(pMessage);
 
-                        // TODO : 클래스 WindowInteropHelper 사용해서 WPF 화면 뷰(Window) 프로퍼티 _CommonLoadingWorkV의 소유자 설정 구현 (2024.11.28 jbh)
+                        // TODO : 클래스 WindowInteropHelper 사용해서 WPF 화면 뷰(Window) 프로퍼티 _CommonLoadingWorkV의 소유자 설정 구현 (2024.11.28 minjae)
                         //        소유자 설정 하기 위해 Owner 속성에 Revit 응용 프로그램 MainWindow Handle 프로퍼티 _MainWindowHandle  할당 
                         // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.windows.interop.windowinterophelper?view=windowsdesktop-8.0
                         // 참고 2 URL - https://mydevnote.tistory.com/299
@@ -163,7 +163,7 @@ namespace CobimDockableDialogs.Settings
         #region HideCommonLoadingWork
 
         // TODO : 메서드 "CloseCommonLoadingWork" 실행 -> _CommonLoadingWorkV.Close(); 한번 닫은 Window 객체는 위의 메서드 "ShowCommonLoadingWork" 다시 호출시 
-        //        아래처럼 오류 메시지 출력 되므로 _CommonLoadingWorkV.Close(); 대신 _CommonLoadingWorkV.Hide(); 가 출력 되도록 메서드 "HideCommonLoadingWork" 구현 (2024.10.07 jbh)
+        //        아래처럼 오류 메시지 출력 되므로 _CommonLoadingWorkV.Close(); 대신 _CommonLoadingWorkV.Hide(); 가 출력 되도록 메서드 "HideCommonLoadingWork" 구현 (2024.10.07 minjae)
         // 오류 메시지 "System.InvalidOperationException: '창이 닫힌 후에는 Visibility를 설정하거나 Show, ShowDialog 또는 WindowInteropHelper.EnsureHandle을 호출할 수 없습니다.'"
         // 참고 URL - https://jooji815.tistory.com/62
 
@@ -181,7 +181,7 @@ namespace CobimDockableDialogs.Settings
                 if(true == _IsShownLoadingWork)
                 {
                     // TODO : 오류 메시지 "System.InvalidOperationException: '많은 UI 구성 요소에서 호출 스레드가 필요하므로 해당 스레드는 STA여야 합니다.'"
-                    //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.02 jbh)
+                    //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.02 minjae)
                     // 참고 URL - https://giveme-happyending.tistory.com/208 
                     // 다른 쓰레드(Window 화면 뷰모델 CommonLoadingWorkVM.cs 소스파일)에서 UI 쓰레드 접근하기
                     // => 윈폼과 마찬가지로 메서드 Dispatcher.Invoke 사용하여 작업
@@ -203,7 +203,7 @@ namespace CobimDockableDialogs.Settings
 
         #region ShowCheckInPart
 
-        // TODO : 체크인 팝업 화면 출력 메서드 "ShowCheckInPart" 필요시 사용 예정 (2024.10.10 jbh) 
+        // TODO : 체크인 팝업 화면 출력 메서드 "ShowCheckInPart" 필요시 사용 예정 (2024.10.10 minjae) 
         /// <summary>
         /// 체크인 팝업 화면 출력 
         /// </summary>
@@ -219,7 +219,7 @@ namespace CobimDockableDialogs.Settings
         //        if(false == _IsShownCheckIn)
         //        {
         //            // TODO : 오류 메시지 "System.InvalidOperationException: '많은 UI 구성 요소에서 호출 스레드가 필요하므로 해당 스레드는 STA여야 합니다.'"
-        //            //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.10 jbh)
+        //            //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.10 minjae)
         //            // 참고 URL - https://giveme-happyending.tistory.com/208 
         //            // 다른 쓰레드(Window 화면 뷰모델 CheckInPartVM.cs 소스파일)에서 UI 쓰레드 접근하기
         //            // => 윈폼과 마찬가지로 메서드 Dispatcher.Invoke 사용하여 작업
@@ -240,7 +240,7 @@ namespace CobimDockableDialogs.Settings
 
         #region HideCheckInPart
 
-        // TODO : 체크인 팝업 화면 숨기기 메서드 "HideCheckInPart" 필요시 사용 예정 (2024.10.10 jbh)
+        // TODO : 체크인 팝업 화면 숨기기 메서드 "HideCheckInPart" 필요시 사용 예정 (2024.10.10 minjae)
         /// <summary>
         /// 체크인 팝업 화면 숨기기
         /// </summary>
@@ -256,7 +256,7 @@ namespace CobimDockableDialogs.Settings
         //        if(true == _IsShownCheckIn)
         //        {
         //            // TODO : 오류 메시지 "System.InvalidOperationException: '많은 UI 구성 요소에서 호출 스레드가 필요하므로 해당 스레드는 STA여야 합니다.'"
-        //            //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.10 jbh)
+        //            //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.10 minjae)
         //            // 참고 URL - https://giveme-happyending.tistory.com/208 
         //            // 다른 쓰레드(Window 화면 뷰모델 CheckInPartVM.cs 소스파일)에서 UI 쓰레드 접근하기
         //            // => 윈폼과 마찬가지로 메서드 Dispatcher.Invoke 사용하여 작업
@@ -277,7 +277,7 @@ namespace CobimDockableDialogs.Settings
 
         #region Sample
 
-        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.10 jbh)
+        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.10 minjae)
         /// <summary>
         /// 로그인, 체크아웃, 체크인, 다운로드 시 처리 중 화면 종료 
         /// </summary>
@@ -292,7 +292,7 @@ namespace CobimDockableDialogs.Settings
         //        if(true == _IsShownLoadingWork) 
         //        {
         //            // TODO : 오류 메시지 "System.InvalidOperationException: '많은 UI 구성 요소에서 호출 스레드가 필요하므로 해당 스레드는 STA여야 합니다.'"
-        //            //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.02 jbh)
+        //            //        출력시 해당 오류 해결하기 위해 아래처럼 메서드 Dispatcher.Invoke 사용해서 구현 (2024.10.02 minjae)
         //            // 참고 URL - https://giveme-happyending.tistory.com/208 
         //            // 다른 쓰레드(Window 화면 뷰모델 CommonLoadingWorkVM.cs 소스파일)에서 UI 쓰레드 접근하기
         //            // => 윈폼과 마찬가지로 메서드 Dispatcher.Invoke 사용하여 작업
@@ -310,7 +310,7 @@ namespace CobimDockableDialogs.Settings
         //    }
         //}
 
-        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.07 jbh)
+        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.07 minjae)
         /// <summary>
         /// Window 화면 객체 가져오기 
         /// </summary>
@@ -350,7 +350,7 @@ namespace CobimDockableDialogs.Settings
         //    {
         //        //Log.Information(Logger.GetMethodPath(currentMethod) + "[Window] 화면 출력 시작");
 
-        //        // TODO : Window 클래스 속성 "IsVisible", "IsEnabled", "IsActive" 사용해서 Window 화면 출력 여부 확인 로직 구현 (2024.10.02 jbh)
+        //        // TODO : Window 클래스 속성 "IsVisible", "IsEnabled", "IsActive" 사용해서 Window 화면 출력 여부 확인 로직 구현 (2024.10.02 minjae)
         //        // 참고 URL - https://forum.dotnetdev.kr/t/wpf-show/816/5
         //        // 참고 2 URL - https://stackoverflow.com/questions/30431133/wpf-detecting-window-close-event-and-coupling-with-a-button-event
         //        // 속성 IsVisible 참고 URL - https://learn.microsoft.com/en-us/dotnet/api/system.windows.uielement.isvisible?view=windowsdesktop-8.0
@@ -420,7 +420,7 @@ namespace CobimDockableDialogs.Settings
         //    try
         //    {
         //        if (_CommonLoadingWorkV is null) _CommonLoadingWorkV = new CommonLoadingWorkV();
-        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.23 jbh)
+        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.23 minjae)
         //        // 싱글톤 패턴 사용해서 처음 한번만 프로퍼티 "_CommonLoadingWorkV", "_CheckInPartV" 객체 생성 (로그인 화면 Window 제외)
         //        // if(_CommonLoadingWorkV is null) _CommonLoadingWorkV = new CommonLoadingWorkV();
         //        // if(_CheckInPartV is null) _CheckInPartV = new CheckInPartV();

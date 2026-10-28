@@ -9,7 +9,7 @@ namespace CobimDockableDialogs.Data.Models.CobimBase.Revit
     // 참고 URL - http://www.csharpstudy.com/CSharp/CSharp-generics.aspx
     public class RevitView<TData> : RevitView where TData : RevitView<TData> { }
 
-    // TODO : 추후 필요시 Revit API 전용 데이터 모델 클래스 RevitView 구현 예정 (2024.10.30 jbh) 
+    // TODO : 추후 필요시 Revit API 전용 데이터 모델 클래스 RevitView 구현 예정 (2024.10.30 minjae) 
     /// <summary>
     /// CobimDockableDialogs
     /// Revit API 전용 데이터 모델

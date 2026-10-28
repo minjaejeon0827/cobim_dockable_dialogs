@@ -55,7 +55,7 @@ namespace CobimDockableDialogs.Common.Extensions
             application.RegisterDockablePane(dockablePaneId, title, provider);
         }
 
-        // TODO : 아래 주석친 DockablePane 등록 static 메서드 RegisterDockablePane 필요시 참고 (2024.09.25 jbh)
+        // TODO : 아래 주석친 DockablePane 등록 static 메서드 RegisterDockablePane 필요시 참고 (2024.09.25 minjae)
         /// <summary>
         /// DockablePane 등록
         /// </summary>

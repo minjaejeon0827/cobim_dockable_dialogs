@@ -25,7 +25,7 @@ namespace CobimDockableDialogs.Views.Windows.LoadingWork
         {
             InitializeComponent();
 
-            // TODO : 대기 처리중 화면 뷰(CommonLoadingWorkV.xaml) 호출시 DataContext 객체 생성 구현 (2024.10.02 jbh)
+            // TODO : 대기 처리중 화면 뷰(CommonLoadingWorkV.xaml) 호출시 DataContext 객체 생성 구현 (2024.10.02 minjae)
             // 참고 URL - https://yeko90.tistory.com/entry/wpf-DataContext-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95
             this.DataContext = new CommonLoadingWorkVM();
 
@@ -47,7 +47,7 @@ namespace CobimDockableDialogs.Views.Windows.LoadingWork
             try
             {
                 // TODO : 오류 메시지 "Invalid URI: The format of the URI could not be determined" 출력 해결하기 위해
-                //        메서드 "InitSetting"안에 아래처럼 속성 "UriSource"에 할당할 이미지 파일 경로를 절대경로 사용해서 구현 (2024.10.10 jbh)
+                //        메서드 "InitSetting"안에 아래처럼 속성 "UriSource"에 할당할 이미지 파일 경로를 절대경로 사용해서 구현 (2024.10.10 minjae)
                 // commonProgressImg.UriSource = new Uri("pack://application:,,,/CobimDockableDialogs;component/Image/CommonProgress.gif");
                 // commonProgressImg.UriSource = new Uri("pack://application:,,,/CobimDockableDialogs;component/Resources/CommonProgress.gif");
                 // 참고 URL - https://github.com/XamlAnimatedGif/WpfAnimatedGif

@@ -11,7 +11,7 @@
       d:DesignWidth="800"
       d:DataContext="{d:DesignInstance vm:HubBoxVM}"
       Title="HubBoxV">
-    <!--  TODO : 화면 뷰 "HubBoxV.xaml"에 뷰모델 "HubBoxVM.cs"을 바인딩할 수 있도록 <Page.DataContext> 사용 (2024.09.25 jbh) -->
+    <!--  TODO : 화면 뷰 "HubBoxV.xaml"에 뷰모델 "HubBoxVM.cs"을 바인딩할 수 있도록 <Page.DataContext> 사용 (2024.09.25 minjae) -->
     <!--  참고 URL - https://www.technical-recipes.com/2015/wpf-binding-image-using-xaml-and-mvvm-pattern/  -->
     <Page.DataContext>
         <vm:HubBoxVM />

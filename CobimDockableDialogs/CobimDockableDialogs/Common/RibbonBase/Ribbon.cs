@@ -31,7 +31,7 @@ namespace CobimDockableDialogs.Common.RibbonBase
             {
                 Log.Information(Logger.GetMethodPath(currentMethod) + "리본 메뉴 등록 시작");
 
-                // TODO : 리본 탭, 리본 패널, 리본 버튼 구현하기 (2024.08.20 jbh)
+                // TODO : 리본 탭, 리본 패널, 리본 버튼 구현하기 (2024.08.20 minjae)
                 // 참고 URL - https://www.revitapidocs.com/2024/8ce17489-75ee-ae81-306d-58f9c505c80c.htm
                 // 참고 2 URL - https://thebuildingcoder.typepad.com/blog/2013/02/adding-a-button-to-existing-ribbon-panel.html
                 // 참고 3 URL - https://archi-lab.net/create-your-own-tab-and-buttons-in-revit/
@@ -43,14 +43,14 @@ namespace CobimDockableDialogs.Common.RibbonBase
                 Dictionary<string, RibbonPanel> panelDic = new Dictionary<string, RibbonPanel>();
                 panelDic.Add(RibbonHelper.PanName_COBIM, rvUIControlledApp.CreateRibbonPanel(RibbonHelper.TabName, RibbonHelper.PanName_COBIM));
 
-                // TODO : 필요시 리본 버튼 - COBIM 텍스트 "WebExplorer" 숨김 처리 되도록 구현 예정 (2024.12.09 jbh)
+                // TODO : 필요시 리본 버튼 - COBIM 텍스트 "WebExplorer" 숨김 처리 되도록 구현 예정 (2024.12.09 minjae)
                 // 참고 URL - https://stackoverflow.com/questions/76601888/button-with-image-and-empty-string-in-revit-api
 
                 // TODO : 리소스 이미지 파일 "COBIMLogo.png" 추가시 아래와 같은 오류 메시지가 출력하여
                 //        리소스 파일(Resources.resx) 마우스 우클릭 -> 컨텍스트 메뉴 "다른 프로그램으로 열기(N)..." 클릭
                 //        -> 팝업화면 "연결 프로그램 - Resources.resx" 출력
                 //        -> 텍스트 "이 파일을 열 때 사용할 프로그램을 선택하세요(C)." 아래 연결할 수 있는 프로그램들 중에 "관리되는 리소스 편집기(레거시)" 클릭
-                //        -> 버튼 "확인" 클릭 -> 예전에 리소스 이미지 파일 추가하는 방식으로 리소스 이미지 파일 "COBIMLogo.png" 추가하기 (2024.12.10 jbh)
+                //        -> 버튼 "확인" 클릭 -> 예전에 리소스 이미지 파일 추가하는 방식으로 리소스 이미지 파일 "COBIMLogo.png" 추가하기 (2024.12.10 minjae)
                 // 오류 코드 "MSB3554"
                 // 오류 메시지 - 출력 파일 "D:\bhjeon\Cobim_DockableDialogs\CobimDockableDialogs\CobimDockableDialogs\obj\x64\Debug\net8.0-windows\CobimDockableDialogs.Properties.Resources.resources"에 쓸 수 없습니다.
                 //               'D:\bhjeon\Cobim_DockableDialogs\CobimDockableDialogs\CobimDockableDialogs\Properties\Resources\COBIMLogo.png' 경로의 일부를 찾을 수 없습니다.
@@ -62,7 +62,7 @@ namespace CobimDockableDialogs.Common.RibbonBase
                 pdbCOBIM.LargeImage = BitmapConverter.ConvertFromBitmap(Properties.Resources.COBIMLogo);   // 아이콘 셋팅
                 panelDic[RibbonHelper.PanName_COBIM].AddItem(pdbCOBIM);
 
-                // TODO : 아래 주석친 코드 필요시 참고 (2024.12.09 jbh)
+                // TODO : 아래 주석친 코드 필요시 참고 (2024.12.09 minjae)
                 // 4 단계 : 리본 패널 - 성과품, (주)상상진화, HubBox 생성
                 // Dictionary<string, RibbonPanel> panelDic = new Dictionary<string, RibbonPanel>();
                 // panelDic.Add(RibbonHelper.PanName_CefSharpCDE, rvUIControlledApp.CreateRibbonPanel(RibbonHelper.TabName, RibbonHelper.PanName_CefSharpCDE));

@@ -30,7 +30,7 @@ namespace CobimDockableDialogs.RequestBase
         /// </summary>
         private Page _DockableDialog { get; set; }
 
-        // TODO : 필요시 프로퍼티 "_CommonLoadingWorkV" 참고 (2024.11.28 jbh)
+        // TODO : 필요시 프로퍼티 "_CommonLoadingWorkV" 참고 (2024.11.28 minjae)
         /// <summary>
         /// Window - 로그인, 체크아웃, 체크인, 다운로드 시 처리 중 화면
         /// </summary>
@@ -53,7 +53,7 @@ namespace CobimDockableDialogs.RequestBase
         /// </summary>
         private UIApplication _RevitUIApp { get; set; }
 
-        // TODO : 필요시 Revit 문서 프로퍼티 "_RevitDoc" 사용 예정 (2024.10.16 jbh)
+        // TODO : 필요시 Revit 문서 프로퍼티 "_RevitDoc" 사용 예정 (2024.10.16 minjae)
         /// <summary>
         /// Revit 문서 
         /// </summary>
@@ -86,7 +86,7 @@ namespace CobimDockableDialogs.RequestBase
 
         #region SetCommonLoadingWorkV
 
-        // TODO : 필요시 메서드 "SetCommonLoadingWorkV" 참고 (2024.11.28 jbh)
+        // TODO : 필요시 메서드 "SetCommonLoadingWorkV" 참고 (2024.11.28 minjae)
         /// <summary>
         /// CefSharp 탐색기 화면 뷰모델(CefSharpExplorerVM.cs) 
         /// Window - 로그인, 체크아웃, 체크인, 다운로드 시 처리 중 화면 객체 값 셋팅
@@ -125,7 +125,7 @@ namespace CobimDockableDialogs.RequestBase
 
                 _RevitUIApp = rvUIApp;
 
-                // TODO : 필요시 아래 주석친 코드 참고 (2024.10.16 jbh)
+                // TODO : 필요시 아래 주석친 코드 참고 (2024.10.16 minjae)
                 // Revit 문서 프로퍼티 "RevitDoc" 할당
                 // _RevitDoc = _RevitUIApp.ActiveUIDocument.Document;    // 활성화된 Revit 문서 
 
@@ -149,7 +149,7 @@ namespace CobimDockableDialogs.RequestBase
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-                // TODO : 오류 발생시 메시지 박스 출력 구현 (2024.10.18 jbh)
+                // TODO : 오류 발생시 메시지 박스 출력 구현 (2024.10.18 minjae)
                 // 메시지 박스 출력 사유
                 // - COBIM 웹 탐색기 JSP 파일에서 오류 메시지를 Alert 으로 대신 출력할 경우
                 // Revit 응용 프로그램 -> Revit 문서의 백그라운드에서 돌고있는 UI쓰레드와 충돌이 발생하여
@@ -207,10 +207,10 @@ namespace CobimDockableDialogs.RequestBase
                 //        파일열기 처리 중 화면이 종료되지 않는 오류 발생!
                 //        하여 해당 오류 해결하기 위해 메세지 박스 출력 메서드 MessageBox.Show 호출시 첫 번째 인자값으로
                 //        메서드 AppSetting.Default.WindowBase.GetCommonLoadingWorkV() 호출 반환값인 
-                //        Window - 로그인, 체크아웃, 체크인, 다운로드 시 처리 중 화면 객체 값으로 할당 구현 (2024.11.28 jbh) 
+                //        Window - 로그인, 체크아웃, 체크인, 다운로드 시 처리 중 화면 객체 값으로 할당 구현 (2024.11.28 minjae) 
                 MessageBox.Show(AppSetting.Default.WindowBase.GetCommonLoadingWorkV(), $"파일명 - {fileName}\r\n열기 완료!");
 
-                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.16 jbh)
+                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.16 minjae)
                 // ModelPath modelPath = ModelPathUtils.ConvertUserVisiblePathToModelPath(@"C:\Users\bhjeon\Desktop\상상진화 회사 업무\RevitBox\RevitBox 버전업\RevitBox 2025\Revitbox 템플릿\Angles.rfa");
                 // rvUIApp.OpenAndActivateDocument(modelPath,
                 //                                 new OpenOptions(),
@@ -227,7 +227,7 @@ namespace CobimDockableDialogs.RequestBase
                 //                                     false);
                 // 
                 // }));
-                // TODO : 아래 오류 메시지 해결하기 위해 Dispatcher.Invoke 사용 (2024.11.28 jbh)
+                // TODO : 아래 오류 메시지 해결하기 위해 Dispatcher.Invoke 사용 (2024.11.28 minjae)
                 // 오류 메시지 - "다른 스레드가 이 개체를 소유하고 있어 호출한 스레드가 해당 개체에 액세스할 수 없습니다"
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.windows.threading.dispatcher.invoke?view=windowsdesktop-6.0
                 // 참고 2 URL - https://insurang.tistory.com/entry/WPF-C-Error-%EB%8B%A4%EB%A5%B8-%EC%8A%A4%EB%A0%88%EB%93%9C%EA%B0%80-%EC%9D%B4-%EA%B0%9C%EC%B2%B4%EB%A5%BC-%EC%86%8C%EC%9C%A0%ED%95%98%EA%B3%A0-%EC%9E%88%EC%96%B4-%ED%98%B8%EC%B6%9C%ED%95%9C-%EC%8A%A4%EB%A0%88%EB%93%9C%EA%B0%80-%ED%95%B4%EB%8B%B9-%EA%B0%9C%EC%B2%B4%EC%97%90-%EC%95%A1%EC%84%B8%EC%8A%A4%ED%95%A0-%EC%88%98-%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%97%90%EB%9F%AC-%EC%93%B0%EB%A0%88%EB%93%9C-Thread-DispatcherInvoke

@@ -16,7 +16,7 @@ namespace CobimDockableDialogs
 
     #region CmdTest
 
-    // TODO : TransactionAttribute - TransactionMode.Manual 설정 구현 (2024.08.20 jbh)
+    // TODO : TransactionAttribute - TransactionMode.Manual 설정 구현 (2024.08.20 minjae)
     // 참고 URL - https://manzoo.tistory.com/107
     [Transaction(TransactionMode.Manual)]       // Transaction 사용이 필요한 경우 (Document 내에서 수정/삭제/추가 등의 작업이 필요한 경우)
     [Regeneration(RegenerationOption.Manual)]
@@ -99,7 +99,7 @@ namespace CobimDockableDialogs
 
     #endregion CmdWebExplorer
 
-    // TODO : 아래 주석친 코드 필요시 참고 (2024.12.09 jbh)
+    // TODO : 아래 주석친 코드 필요시 참고 (2024.12.09 minjae)
 
     #region CmdCefSharpCDE
 
@@ -147,7 +147,7 @@ namespace CobimDockableDialogs
 
     #region CmdHubBox
 
-    // TODO : HubBox Command 클래스 CmdHubBox 필요시 참고 (2024.09.26 jbh)
+    // TODO : HubBox Command 클래스 CmdHubBox 필요시 참고 (2024.09.26 minjae)
     //[Transaction(TransactionMode.Manual)]       // Transaction 사용이 필요한 경우 (Document 내에서 수정/삭제/추가 등의 작업이 필요한 경우)
     //[Regeneration(RegenerationOption.Manual)]
     ///// <summary>
@@ -204,7 +204,7 @@ namespace CobimDockableDialogs
 
     //    #region 기본 메소드
 
-    //    // TODO : 콜백 함수 Execute 구현 (2024.08.20 jbh)
+    //    // TODO : 콜백 함수 Execute 구현 (2024.08.20 minjae)
     //    // 콜백(CallBack) 함수란? 시스템이 사용자가 요청한 처리를 하다가 특정 이벤트를 발생시켜 해당 이벤트를 처리해달라고 역으로 전달해 오는 함수
     //    // 참고 URL - https://nephrolepis.tistory.com/12
     //    // 참고 2 URL - https://todaycode.tistory.com/24

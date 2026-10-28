@@ -24,7 +24,7 @@ using Autodesk.Revit.UI;
 
 namespace CobimDockableDialogs.Views.Pages.DockableDialogs.Project.CefSharpCDE.CefSharpExplorer
 {
-    // TODO : 아래 오류 메시지 개선을 하기 위해 Nuget 패키지 "CefSharp.Wpf.NETCore" 기존 버전 "Version=128.4.90.0" 삭제 후 낮은 버전 "Version=119.4.30.0" 설치 진행함 (2024.09.27 jbh)
+    // TODO : 아래 오류 메시지 개선을 하기 위해 Nuget 패키지 "CefSharp.Wpf.NETCore" 기존 버전 "Version=128.4.90.0" 삭제 후 낮은 버전 "Version=119.4.30.0" 설치 진행함 (2024.09.27 minjae)
     // "cobimWebExplorer.Address error CS1705: ID가 'CobimDockableDialogs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'인 'CobimDockableDialogs' 어셈블리는 ID가 'CefSharp.Wpf, Version=119.4.30.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138'인 참조된 어셈블리 'CefSharp.Wpf' 이후 버전인 'CefSharp.Wpf, Version=128.4.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138'을(를) 사용합니다." 
 
 
@@ -105,11 +105,11 @@ namespace CobimDockableDialogs.Views.Pages.DockableDialogs.Project.CefSharpCDE.C
             
             try
             {
-                // TODO : COBIM CefSharp 웹 탐색기 화면 뷰(CefSharpExplorerV.xaml) 호출시 DataContext 객체 생성 구현 (2024.10.10 jbh)
+                // TODO : COBIM CefSharp 웹 탐색기 화면 뷰(CefSharpExplorerV.xaml) 호출시 DataContext 객체 생성 구현 (2024.10.10 minjae)
                 // 참고 URL - https://yeko90.tistory.com/entry/wpf-DataContext-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95
                 this.DataContext = new CefSharpExplorerVM();
 
-                // TODO : 아래 주석친 테스트 웹 어플리케이션 URL 주소 "http://localhost:8080/src/index.html" 필요시 참고 (2024.09.30 jbh)
+                // TODO : 아래 주석친 테스트 웹 어플리케이션 URL 주소 "http://localhost:8080/src/index.html" 필요시 참고 (2024.09.30 minjae)
                 // 테스트 웹 어플리케이션 Git URL 주소 - https://github.com/bonghakjeon/CefSharpWebApp
                 // cobimWebExplorer.Address = "http://localhost:8080/src/index.html";
 
@@ -124,7 +124,7 @@ namespace CobimDockableDialogs.Views.Pages.DockableDialogs.Project.CefSharpCDE.C
 
                 cobimWebExplorer.JavascriptObjectRepository.ResolveObject += (sender, e) =>
                 {
-                    // TODO : 아래 오류 메시지 해결하기 위해 Dispatcher.Invoke 사용 (2024.09.27 jbh)
+                    // TODO : 아래 오류 메시지 해결하기 위해 Dispatcher.Invoke 사용 (2024.09.27 minjae)
                     // 오류 메시지 - "다른 스레드가 이 개체를 소유하고 있어 호출한 스레드가 해당 개체에 액세스할 수 없습니다"
                     // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.windows.threading.dispatcher.invoke?view=windowsdesktop-6.0
                     // 참고 2 URL - https://insurang.tistory.com/entry/WPF-C-Error-%EB%8B%A4%EB%A5%B8-%EC%8A%A4%EB%A0%88%EB%93%9C%EA%B0%80-%EC%9D%B4-%EA%B0%9C%EC%B2%B4%EB%A5%BC-%EC%86%8C%EC%9C%A0%ED%95%98%EA%B3%A0-%EC%9E%88%EC%96%B4-%ED%98%B8%EC%B6%9C%ED%95%9C-%EC%8A%A4%EB%A0%88%EB%93%9C%EA%B0%80-%ED%95%B4%EB%8B%B9-%EA%B0%9C%EC%B2%B4%EC%97%90-%EC%95%A1%EC%84%B8%EC%8A%A4%ED%95%A0-%EC%88%98-%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%97%90%EB%9F%AC-%EC%93%B0%EB%A0%88%EB%93%9C-Thread-DispatcherInvoke

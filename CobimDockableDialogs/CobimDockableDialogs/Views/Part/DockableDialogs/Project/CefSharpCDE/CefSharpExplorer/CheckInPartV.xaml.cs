@@ -25,7 +25,7 @@ namespace CobimDockableDialogs.Views.Part.DockableDialogs.Project.CefSharpCDE.Ce
         {
             InitializeComponent();
 
-            // TODO : 체크인 팝업 화면 뷰(CheckInPartV.xaml) 호출시 DataContext 객체 생성 구현 (2024.10.10 jbh)
+            // TODO : 체크인 팝업 화면 뷰(CheckInPartV.xaml) 호출시 DataContext 객체 생성 구현 (2024.10.10 minjae)
             // 참고 URL - https://yeko90.tistory.com/entry/wpf-DataContext-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95
             this.DataContext = new CheckInPartVM();
 

@@ -29,7 +29,7 @@ namespace CobimDockableDialogs.Settings
         /// </summary>
         private UIApplication _RevitUIApp { get; set; }
 
-        // TODO : 필요시 DockableDialog - 탐색기 화면 프로퍼티 "_ExplorerV" 사용 예정 (2024.09.25 jbh)
+        // TODO : 필요시 DockableDialog - 탐색기 화면 프로퍼티 "_ExplorerV" 사용 예정 (2024.09.25 minjae)
         /// <summary>
         /// DockableDialog - 탐색기 화면 뷰
         /// </summary>
@@ -72,7 +72,7 @@ namespace CobimDockableDialogs.Settings
 
         #region 생성자
 
-        // TODO : 필요시 생성자 "DockableDialogSetting" 구현 예정 (2024.10.07 jbh)
+        // TODO : 필요시 생성자 "DockableDialogSetting" 구현 예정 (2024.10.07 minjae)
         public DockableDialogSetting() 
         {
 
@@ -92,7 +92,7 @@ namespace CobimDockableDialogs.Settings
             try
             {
                 // 싱글톤 패턴 사용해서 처음 한번만 프로퍼티 "_ExplorerV", "_CefSharpExplorerV", "_HubBoxV" 객체 생성
-                // if(_ExplorerV is null) _ExplorerV = new ExplorerV();   // TODO : 필요시 DockableDialog - 탐색기 화면 프로퍼티 "_ExplorerV" 사용 예정 (2024.09.25 jbh)
+                // if(_ExplorerV is null) _ExplorerV = new ExplorerV();   // TODO : 필요시 DockableDialog - 탐색기 화면 프로퍼티 "_ExplorerV" 사용 예정 (2024.09.25 minjae)
                 if(_CefSharpExplorerV is null) _CefSharpExplorerV = new CefSharpExplorerV();
                 if(_HubBoxV is null) _HubBoxV = new HubBoxV();
             }
@@ -170,7 +170,7 @@ namespace CobimDockableDialogs.Settings
                         case CobimHelper.HubBoxTitle:   // DockableDialog - HubBox 화면 뷰인 경우 
                             rvUIControlledApp.RegisterDockablePane(_DockablePaneId, dockablePaneTitle, _HubBoxV, dockablePaneState);
                             break;
-                        // TODO : 아래 주석친 case 레이블(case CobimHelper.TypeOfExplorer:) 필요시 사용 예정 (2024.09.25 jbh)
+                        // TODO : 아래 주석친 case 레이블(case CobimHelper.TypeOfExplorer:) 필요시 사용 예정 (2024.09.25 minjae)
                         // case CobimHelper.ExpTitle:
                         //     rvUIControlledApp.RegisterDockablePane(dockablePaneId, RibbonHelper.PanName_CDE, _ExplorerV, dockablePaneState);
                         //     rvUIControlledApp.RegisterDockablePane(dockablePaneId, dockablePaneTitle, _ExplorerV, dockablePaneState);
@@ -212,7 +212,7 @@ namespace CobimDockableDialogs.Settings
                 // Log.Information(Logger.GetMethodPath(currentMethod) + "[DockableDialog] 화면 출력 시작");
 
                 // TODO : 오류 메시지 "Object reference not set to an instance of an object." 출력 해결하기 위해 
-                //        아래처럼 Revit UI 애플리케이션 객체 값 셋팅 코드 _RevitUIApp = rvUIApp; 구현 (2024.10.24 jbh)
+                //        아래처럼 Revit UI 애플리케이션 객체 값 셋팅 코드 _RevitUIApp = rvUIApp; 구현 (2024.10.24 minjae)
                 // Revit UI 애플리케이션 객체 값 셋팅 
                 _RevitUIApp = rvUIApp;
 
@@ -235,7 +235,7 @@ namespace CobimDockableDialogs.Settings
                     Log.Information(Logger.GetMethodPath(currentMethod) + $"[DockableDialog] {pDockableDialogTitle} 화면 출력 완료");
                 }
 
-                // TODO : 아래 주석친 조건절 if(dockablePane is not null) 은 사용 안 해도 됨. (2024.09.25 jbh)
+                // TODO : 아래 주석친 조건절 if(dockablePane is not null) 은 사용 안 해도 됨. (2024.09.25 minjae)
                 //        왜냐하면 try - catch 문 사용으로 인해 
                 //        dockablePane에 null 값이 할당 되면 null Exception 이 발생되어 오류 로그 남기기 때문
                 // if(dockablePane is not null)
@@ -245,7 +245,7 @@ namespace CobimDockableDialogs.Settings
                 //    _DockablePane.Show();
                 //    Log.Information(Logger.GetMethodPath(currentMethod) + $"[DockableDialog] {dockablePaneTitle} 화면 출력 완료");
                 //} 
-                // TODO : 아래 주석친 else 절 로직 필요시 참고 (2024.09.25 jbh)
+                // TODO : 아래 주석친 else 절 로직 필요시 참고 (2024.09.25 minjae)
                 //else throw new Exception($"[DockableDialog] {dockablePaneTitle} 화면 출력 오류!\r\n관리자에게 문의하세요.");
             }
             catch (Exception ex)
