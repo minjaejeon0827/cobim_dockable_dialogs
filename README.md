@@ -111,3 +111,6 @@ VM.MakeRequest(EnumCefSharpExplorerRequestId.X)
 - 조건 비교는 명시적으로 작성한다: `if(true == x)` / `if(false == x)`
 - 코드는 `#region` 블록(`프로퍼티`, `생성자`, `기본 메소드` 등)으로 구분한다.
 - Data.Models의 클래스는 자동 속성 대신 `GetX()` / `SetX()` 메서드로 값을 읽고 쓴다.
+
+### 참고
+- [COBIM BIM 기반 인프라 발주-설계 프로세스 디지털 협업 체계 개발](https://scienceon.kisti.re.kr/srch/selectPORSrchReport.do?cn=TRKO202500010351)
