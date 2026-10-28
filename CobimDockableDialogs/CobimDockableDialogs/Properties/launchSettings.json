@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "CobimDockableDialogs": {
+      "commandName": "Project"
+    },
+    "Revit2025": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2025\\Revit.exe"
+    }
+  }
+}
